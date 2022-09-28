@@ -1,14 +1,11 @@
 import React from 'react';
 import './App.css';
+import {MainContainer} from "./components/Container";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          This is my first ts project.
-        </p>
-      </header>
+    <div>
+        <MainContainer />
     </div>
   );
 }
