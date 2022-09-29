@@ -32,7 +32,7 @@ const CardForTask = ({item, finishTask}: props) => {
 
     return (
         <div className="card" style={{"backgroundColor": color()}}>
-            <h2 className={"cardTitle"}>{item.title}</h2>
+            <h3 className={"cardTitle"}>{item.title}</h3>
             <p className={"cardDetails"}>{item.details}</p>
             <div className={"buttonDiv"}>
                 <Button className={"cardButton"} onClick={() => {
