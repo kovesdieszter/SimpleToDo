@@ -74,18 +74,16 @@ const MainContainer = () => {
                     </div>
                     <div className={"simple"}>
                         <FormControl sx={{ m: 1, minWidth: 150 }} style={{"width": "200px"}}>
-                            <TextField id={"selectOption"} label={"Urgency"} select>
-                            {/*<Select labelId="selectOption" label="Label" value={urgentType} onChange={(event) => {*/}
-                            {/*    // @ts-ignore*/}
-                            {/*    setUrgentType(event.target.value);*/}
-                            {/*}}>*/}
+                            <TextField id={"selectOption"} label={"Urgency"} select value={urgentType} onChange={(event) => {
+                                // @ts-ignore
+                                setUrgentType(event.target.value);
+                            }}>
                                 {Object.keys(UrgentType).map((element: string, index) => (
                                     <MenuItem className={"menuItem"} id={"menuItem"} centerRipple key={index}
                                               value={element}>
                                         {UrgentType[element]}
                                     </MenuItem>
                                 ))}
-                            {/*</Select>*/}
                             </TextField>
                         </FormControl>
                     </div>
