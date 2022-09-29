@@ -4,8 +4,6 @@
 
 .mainCard {
   display: flex;
-  grid-auto-flow: column;
-  grid-column-gap: 10px;
   padding: 50px;
   background-color: bisque;
 }
@@ -69,4 +67,13 @@
   border-radius: 35px!important;
   margin-top: 5px;
   margin-bottom: 20px;
+}
+
+.cardContainer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 50px;
+  max-width: max-content;
+
 }
