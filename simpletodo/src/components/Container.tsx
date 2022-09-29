@@ -1,6 +1,6 @@
 import {UrgentType} from "../enums/UrgentType";
 import {Button, Card, FormControl, InputLabel, MenuItem, Select, TextField} from "@mui/material";
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {Task} from "../classes/Task";
 import CardForTask from "./CardForTask";
 
@@ -24,7 +24,7 @@ const MainContainer = () => {
     console.log(tasks);
     const cards = tasks.map( (element) => {
             return (
-               <CardForTask item={element}/>
+               <CardForTask item={element} finishTask={finishTask}/>
             )
         }
     )
@@ -43,7 +43,13 @@ const MainContainer = () => {
         return JSON.parse(taskJSON).tasks;
     }
 
-    // @ts-ignore
+    function finishTask(finishedTask: string): void {
+        setTasks(tasks.filter( (task) => {
+            return task.title !== finishedTask;
+        }))
+    }
+
+
     return (
         <>
             <div className={"mainCard"}>
@@ -67,19 +73,20 @@ const MainContainer = () => {
                                    }}/>
                     </div>
                     <div className={"simple"}>
-                        <FormControl style={{"width": "200px"}}>
-                            <InputLabel id="selectOption">Urgency</InputLabel>
-                            <Select labelId="selectOption" label="Label" value={urgentType} onChange={(event) => {
-                                // @ts-ignore
-                                setUrgentType(event.target.value);
-                            }}>
+                        <FormControl sx={{ m: 1, minWidth: 150 }} style={{"width": "200px"}}>
+                            <TextField id={"selectOption"} label={"Urgency"} select>
+                            {/*<Select labelId="selectOption" label="Label" value={urgentType} onChange={(event) => {*/}
+                            {/*    // @ts-ignore*/}
+                            {/*    setUrgentType(event.target.value);*/}
+                            {/*}}>*/}
                                 {Object.keys(UrgentType).map((element: string, index) => (
                                     <MenuItem className={"menuItem"} id={"menuItem"} centerRipple key={index}
                                               value={element}>
                                         {UrgentType[element]}
                                     </MenuItem>
                                 ))}
-                            </Select>
+                            {/*</Select>*/}
+                            </TextField>
                         </FormControl>
                     </div>
                     <div className={"simple"}>

@@ -3,9 +3,11 @@ import '../Card.css';
 import {UrgentType} from "../enums/UrgentType";
 import {Button} from "@mui/material";
 
-type props = {item: Task};
+type props = {
+    item: Task,
+    finishTask(fnTask: string):void};
 
-const CardForTask = ({item}: props) => {
+const CardForTask = ({item, finishTask}: props) => {
 
     const color = () => {
         let bcColor = "";
@@ -26,12 +28,16 @@ const CardForTask = ({item}: props) => {
         return bcColor;
     }
     console.log(color);
+
+
     return (
         <div className="card" style={{"backgroundColor": color()}}>
             <h2 className={"cardTitle"}>{item.title}</h2>
             <p className={"cardDetails"}>{item.details}</p>
             <div className={"buttonDiv"}>
-                <Button className={"cardButton"}> Finished </Button>
+                <Button className={"cardButton"} onClick={() => {
+                    finishTask(item.title)
+                }}> Finish </Button>
             </div>
         </div>
     )
