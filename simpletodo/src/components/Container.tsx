@@ -1,6 +1,6 @@
 import {UrgentType} from "../enums/UrgentType";
 import {Button, Card, FormControl, InputLabel, MenuItem, Select, TextField} from "@mui/material";
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Task} from "../classes/Task";
 import CardForTask from "./CardForTask";
 
@@ -9,7 +9,8 @@ const MainContainer = () => {
     const [title, setTitle] = useState<string>("");
     const [details, setDetails] = useState<string>("");
     const [urgentType, setUrgentType] = useState<UrgentType>(UrgentType.TODAY);
-    const [tasks, setTasks] = useState<Task[]>([]);
+    const [tasks, setTasks] = useState<Task[]>(loadTasks);
+
 
     function handleClick(): void {
         // @ts-ignore
@@ -20,13 +21,27 @@ const MainContainer = () => {
         setDetails("");
         setUrgentType(UrgentType.TODAY);
     }
-
+    console.log(tasks);
     const cards = tasks.map( (element) => {
             return (
                <CardForTask item={element}/>
             )
         }
     )
+
+    function saveTasks() {
+        localStorage.setItem("TASKS", JSON.stringify({tasks}))
+    }
+
+    useEffect(() => {
+        saveTasks();
+    }, [handleClick])
+
+    function loadTasks(): Task[] {
+        const taskJSON = localStorage.getItem("TASKS");
+        if (taskJSON == null) return [];
+        return JSON.parse(taskJSON).tasks;
+    }
 
     // @ts-ignore
     return (
