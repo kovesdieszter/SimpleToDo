@@ -21,7 +21,7 @@ const MainContainer = () => {
         setDetails("");
         setUrgentType(UrgentType.TODAY);
     }
-    console.log(tasks);
+
     const cards = tasks.map( (element) => {
             return (
                <CardForTask item={element} finishTask={finishTask}/>
@@ -49,15 +49,15 @@ const MainContainer = () => {
         }))
     }
 
+
     return (
         <>
             <div className={"mainCard"}>
-                <div className={"form"}>
+                <form className={"form"}>
                     <div className={"simple"} id={"titleText"}>
                         <TextField id="standard-basic"
                                    label="Title"
                                    variant="standard"
-                                   required
                                    value={title}
                                    onChange={(event) => {
                                        setTitle(event.target.value);
@@ -67,7 +67,6 @@ const MainContainer = () => {
                         <TextField className={"details"}
                                    id="standard-basic detailsText" label="Details"
                                    variant="standard"
-                                   required
                                    value={details}
                                    onChange={(event) => {
                                        setDetails(event.target.value);
@@ -75,7 +74,7 @@ const MainContainer = () => {
                     </div>
                     <div className={"simple"}>
                         <FormControl sx={{ m: 1, minWidth: 150 }} style={{"width": "200px"}}>
-                            <TextField id={"selectOption"} label={"Urgency"} select value={urgentType} required onChange={(event) => {
+                            <TextField id={"selectOption"} label={"Urgency"} select value={urgentType} onChange={(event) => {
                                 // @ts-ignore
                                 setUrgentType(event.target.value);
                             }}>
@@ -89,11 +88,11 @@ const MainContainer = () => {
                         </FormControl>
                     </div>
                     <div className={"simple"}>
-                        <Button className={"addButton"} variant="contained" onClick={handleClick}>
+                        <Button className={"addButton"} variant="contained" type={"submit"} onClick={handleClick} >
                             Add new task
                         </Button>
                     </div>
-                </div>
+                </form>
             </div>
             <div className={"cardContainer"}>{cards}</div>
         </>
