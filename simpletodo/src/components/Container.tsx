@@ -3,6 +3,7 @@ import {Button, FormControl, MenuItem,  TextField} from "@mui/material";
 import React, {useEffect, useState} from "react";
 import {Task} from "../classes/Task";
 import CardForTask from "./CardForTask";
+import { v4 as uuidV4 } from 'uuid';
 
 const MainContainer = () => {
 
@@ -14,7 +15,7 @@ const MainContainer = () => {
 
     function handleClick(): void {
         // @ts-ignore
-        let newTask: Task = new Task(title, details, urgentType);
+        let newTask: Task = new Task(uuidV4(),title, details, urgentType);
         // @ts-ignore
         setTasks([...tasks, newTask]);
         setTitle("");
@@ -45,7 +46,7 @@ const MainContainer = () => {
 
     function finishTask(finishedTask: string): void {
         setTasks(tasks.filter( (task) => {
-            return task.title !== finishedTask;
+            return task.id !== finishedTask;
         }))
     }
 

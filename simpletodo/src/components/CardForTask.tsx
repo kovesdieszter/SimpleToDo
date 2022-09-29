@@ -36,7 +36,7 @@ const CardForTask = ({item, finishTask}: props) => {
             <p className={"cardDetails"}>{item.details}</p>
             <div className={"buttonDiv"}>
                 <Button className={"cardButton"} onClick={() => {
-                    finishTask(item.title)
+                    finishTask(item.id)
                 }}> Finish </Button>
             </div>
         </div>
