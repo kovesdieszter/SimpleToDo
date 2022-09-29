@@ -1,6 +1,6 @@
 import {UrgentType} from "../enums/UrgentType";
-import {Button, Card, FormControl, InputLabel, MenuItem, Select, TextField} from "@mui/material";
-import React, {useEffect, useRef, useState} from "react";
+import {Button, FormControl, MenuItem,  TextField} from "@mui/material";
+import React, {useEffect, useState} from "react";
 import {Task} from "../classes/Task";
 import CardForTask from "./CardForTask";
 
@@ -49,7 +49,6 @@ const MainContainer = () => {
         }))
     }
 
-
     return (
         <>
             <div className={"mainCard"}>
@@ -58,6 +57,7 @@ const MainContainer = () => {
                         <TextField id="standard-basic"
                                    label="Title"
                                    variant="standard"
+                                   required
                                    value={title}
                                    onChange={(event) => {
                                        setTitle(event.target.value);
@@ -67,6 +67,7 @@ const MainContainer = () => {
                         <TextField className={"details"}
                                    id="standard-basic detailsText" label="Details"
                                    variant="standard"
+                                   required
                                    value={details}
                                    onChange={(event) => {
                                        setDetails(event.target.value);
@@ -74,7 +75,7 @@ const MainContainer = () => {
                     </div>
                     <div className={"simple"}>
                         <FormControl sx={{ m: 1, minWidth: 150 }} style={{"width": "200px"}}>
-                            <TextField id={"selectOption"} label={"Urgency"} select value={urgentType} onChange={(event) => {
+                            <TextField id={"selectOption"} label={"Urgency"} select value={urgentType} required onChange={(event) => {
                                 // @ts-ignore
                                 setUrgentType(event.target.value);
                             }}>
