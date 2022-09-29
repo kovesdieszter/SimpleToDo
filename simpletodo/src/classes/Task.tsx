@@ -4,10 +4,6 @@ export class Task {
     constructor(
         readonly title: string,
         readonly details: string,
-        private urgentType: UrgentType
+        readonly urgentType: UrgentType
     ) {}
-
-    format() {
-        return `${this.details}`;
-    }
 }
