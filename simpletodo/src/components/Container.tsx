@@ -12,7 +12,6 @@ const MainContainer = () => {
     const [urgentType, setUrgentType] = useState<UrgentType>(UrgentType.TODAY);
     const [tasks, setTasks] = useState<Task[]>(loadTasks);
 
-
     function handleClick(): void {
         // @ts-ignore
         let newTask: Task = new Task(uuidV4(),title, details, urgentType);
