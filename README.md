@@ -2,11 +2,11 @@
 
 # Simple ToDo Application
 - This is a React application where I used typescript and material UI for the first time.
-- User can add a task and delete it if he/she finished it.
-- My biggest challenge: use CSS with material ui elements.
+- User can add tasks and delete them when they are finished.
+- My biggest challenge: using CSS with material UI.
 
 ## Features
-- The card's background color is different based on task's urgency.
+- The background color of the task cards depends on the urgency.
 - Application stores tasks in localstorage.
 
 ## Technology
