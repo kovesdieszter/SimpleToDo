@@ -1,0 +1,79 @@
+.App {
+  /*text-align: center;*/
+}
+
+.mainCard {
+  display: flex;
+  padding: 50px;
+  background-color: bisque;
+}
+
+.welcome {
+  display: flex;
+  padding: 50px;
+  background-color: bisque;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  float: left;
+}
+
+.simple {
+  margin-right: 50px;
+}
+
+.details {
+  width: 500px;
+}
+
+.menuItem {
+  width: max-content;
+}
+
+.welcome h1 {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.5em;
+  padding-bottom: 15px;
+  position: relative;
+}
+.welcome h1:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 5px;
+  width: 125px;
+  background-color: #111;
+}
+.welcome h1:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  height: 1px;
+  width: 100%;
+  max-width: 700px;
+  background-color: #333;
+}
+
+.addButton {
+  background-color: rgba(33, 182, 125, 0.68) !important;
+  padding: 14px 30px!important;
+  font-size: 18px!important;
+  border-radius: 35px!important;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 50px;
+  max-width: max-content;
+
+}
