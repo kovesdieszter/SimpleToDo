@@ -15,10 +15,8 @@
 - CSS
 - Typescript
 - Material UI
+- AWS Amplify
 
 ## Getting Started
 
-- Clone the repository using the command git clone `https://github.com/kovesdieszter/SimpleToDo.git`.
-- Install all necessary packages asked by your IDE.
-- Run `npm start` from `simpletodo` directory.
-- Then type `http://localhost:3000/` in your browser.
+- This application is deployed on AWS, so just type `https://main.d23sxx0ohyehql.amplifyapp.com/` in your browser.
