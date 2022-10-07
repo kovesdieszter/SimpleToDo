@@ -19,4 +19,4 @@
 
 ## Getting Started
 
-- This application is deployed on AWS, so just click this link and try it: [a link](https://main.d23sxx0ohyehql.amplifyapp.com/).
+- This application is deployed on AWS, so just click [here](https://main.d23sxx0ohyehql.amplifyapp.com/) and try it.
