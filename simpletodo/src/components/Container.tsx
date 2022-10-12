@@ -23,12 +23,7 @@ const MainContainer = () => {
         setUrgentType(UrgentType.TODAY);
     }
 
-    const cards = tasks.map( (element) => {
-            return (
-               <CardForTask item={element} finishTask={finishTask}/>
-            )
-        }
-    )
+    const cards = tasks.map((element) => <CardForTask item={element} finishTask={finishTask}/> );
 
     function saveTasks() {
         localStorage.setItem("TASKS", JSON.stringify({tasks}))
