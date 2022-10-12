@@ -1,8 +1,8 @@
-import {UrgentType} from "../enums/UrgentType";
-import {Button, FormControl, MenuItem,  TextField} from "@mui/material";
-import React, {useEffect, useState} from "react";
-import {Task} from "../classes/Task";
-import CardForTask from "./CardForTask";
+import {UrgentType} from '../enums/UrgentType';
+import {Button, FormControl, MenuItem,  TextField} from '@mui/material';
+import React, {useEffect, useState} from 'react';
+import {Task} from '../classes/Task';
+import CardForTask from './CardForTask';
 import { v4 as uuidV4 } from 'uuid';
 
 const MainContainer = () => {

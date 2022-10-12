@@ -1,6 +1,6 @@
-import {Task} from "../classes/Task";
+import {Task} from '../classes/Task';
 import '../Card.css';
-import {Button} from "@mui/material";
+import {Button} from '@mui/material';
 
 
 type props = {

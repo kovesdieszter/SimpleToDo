@@ -1,4 +1,4 @@
-import {UrgentType} from "../enums/UrgentType";
+import {UrgentType} from '../enums/UrgentType';
 
 export class Task {
     constructor(

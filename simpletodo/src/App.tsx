@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
-import MainContainer from "./components/Container";
-import Title from "./components/Title";
+import MainContainer from './components/Container';
+import Title from './components/Title';
 
 
 function App() {
