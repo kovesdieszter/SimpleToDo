@@ -1,16 +1,17 @@
 import React from 'react';
 import './App.css';
+import MainContainer from './components/Container';
+import Title from './components/Title';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          This is my first ts project.
-        </p>
-      </header>
+    <div>
+      <Title />
+      <MainContainer />
     </div>
   );
 }
+
 
 export default App;

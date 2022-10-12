@@ -2,37 +2,82 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.mainCard {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  padding: 50px;
+  background-color: bisque;
+  width: 100vw;
 }
 
-.App-link {
-  color: #61dafb;
+.welcome {
+  display: flex;
+  padding: 50px;
+  background-color: bisque;
+  width: 100vw;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  float: left;
+  width: 100vw;
+}
+
+.marginToElement {
+  margin-right: 30px;
+  margin-bottom: 15px;
+}
+
+.titleText {
+  width: 15vw;
+}
+
+
+.detailsText{
+  width: 35vw;
+}
+
+
+.menu menuItem{
+  width: 25vw;
+}
+
+.addNewButton addButton {
+  width: 25vw;
+}
+
+
+.details {
+  width: 95%;
+}
+
+.menuItem {
+  width: max-content;
+}
+
+.welcome h1 {
+  font-size: 28px;
+  font-weight: 500;
+  letter-spacing: 0;
+  line-height: 1.5em;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+
+.addButton {
+  background-color: rgba(33, 182, 125, 0.68) !important;
+  padding: 14px 30px!important;
+  font-size: 18px!important;
+  border-radius: 35px!important;
+  margin-top: 5px;
+  margin-bottom: 20px;
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 50px;
+  max-width: max-content;
 }
