@@ -1,5 +1,5 @@
 .App {
-  /*text-align: center;*/
+  text-align: center;
 }
 
 .mainCard {
@@ -75,5 +75,4 @@
   justify-content: space-around;
   padding: 50px;
   max-width: max-content;
-
 }
