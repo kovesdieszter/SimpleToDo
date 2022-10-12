@@ -27,13 +27,11 @@ const MainContainer = () => {
         localStorage.setItem("TASKS", JSON.stringify({tasks}))
     }
 
-    useEffect(() => {
-        saveTasks();
-    }, [handleClick])
+    useEffect(saveTasks, [handleClick]);
 
     function loadTasks(): Task[] {
         const taskJSON = localStorage.getItem("TASKS");
-        if (taskJSON == null) return [];
+        if (taskJSON === null) return [];
         return JSON.parse(taskJSON).tasks;
     }
 
@@ -48,7 +46,7 @@ const MainContainer = () => {
         <>
             <div className="mainCard">
                 <form className="form">
-                    <div className="simple" id="titleText">
+                    <div className="marginToElement titleText" id="titleText">
                         <TextField id="standard-basic"
                                    label="Title"
                                    variant="standard"
@@ -57,7 +55,7 @@ const MainContainer = () => {
                                        setTitle(event.target.value);
                                    }}/>
                     </div>
-                    <div className="simple">
+                    <div className="marginToElement detailsText">
                         <TextField className="details"
                                    id="standard-basic detailsText" label="Details"
                                    variant="standard"
@@ -66,7 +64,7 @@ const MainContainer = () => {
                                        setDetails(event.target.value);
                                    }}/>
                     </div>
-                    <div className="simple">
+                    <div className="marginToElement menu">
                         <FormControl sx={{ m: 1, minWidth: 150 }} style={{"width": "200px"}}>
                             <TextField id="selectOption" label="Urgency" select value={urgentType} onChange={(event) => {
                                 setUrgentType(event.target.value as UrgentType);
@@ -80,7 +78,7 @@ const MainContainer = () => {
                             </TextField>
                         </FormControl>
                     </div>
-                    <div className="simple">
+                    <div className="marginToElement addNewButton">
                         <Button className="addButton" variant="contained" type="submit" onClick={handleClick} >
                             Add new task
                         </Button>
