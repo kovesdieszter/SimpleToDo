@@ -22,10 +22,10 @@ const CardForTask = ({item, finishTask}: props) => {
 
     return (
         <div className="card" style={{"backgroundColor": setBackgroundColor()}}>
-            <h3 className={"cardTitle"}>{item.title}</h3>
-            <p className={"cardDetails"}>{item.details}</p>
-            <div className={"buttonDiv"}>
-                <Button className={"cardButton"} onClick={() => {
+            <h3 className="cardTitle">{item.title}</h3>
+            <p className="cardDetails">{item.details}</p>
+            <div className="buttonDiv">
+                <Button className="cardButton" onClick={() => {
                     finishTask(item.id)
                 }}> Finish </Button>
             </div>

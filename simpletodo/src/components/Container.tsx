@@ -48,9 +48,9 @@ const MainContainer = () => {
 
     return (
         <>
-            <div className={"mainCard"}>
-                <form className={"form"}>
-                    <div className={"simple"} id={"titleText"}>
+            <div className="mainCard">
+                <form className="form">
+                    <div className="simple" id="titleText">
                         <TextField id="standard-basic"
                                    label="Title"
                                    variant="standard"
@@ -59,8 +59,8 @@ const MainContainer = () => {
                                        setTitle(event.target.value);
                                    }}/>
                     </div>
-                    <div className={"simple"}>
-                        <TextField className={"details"}
+                    <div className="simple">
+                        <TextField className="details"
                                    id="standard-basic detailsText" label="Details"
                                    variant="standard"
                                    value={details}
@@ -68,14 +68,14 @@ const MainContainer = () => {
                                        setDetails(event.target.value);
                                    }}/>
                     </div>
-                    <div className={"simple"}>
+                    <div className="simple">
                         <FormControl sx={{ m: 1, minWidth: 150 }} style={{"width": "200px"}}>
-                            <TextField id={"selectOption"} label={"Urgency"} select value={urgentType} onChange={(event) => {
+                            <TextField id="selectOption" label="Urgency" select value={urgentType} onChange={(event) => {
                                 // @ts-ignore
                                 setUrgentType(event.target.value);
                             }}>
                                 {Object.keys(UrgentType).map((element: string, index) => (
-                                    <MenuItem className={"menuItem"} id={"menuItem"} centerRipple key={index}
+                                    <MenuItem className="menuItem" id="menuItem" centerRipple key={index}
                                               value={element}>
                                         {UrgentType[element]}
                                     </MenuItem>
@@ -83,18 +83,16 @@ const MainContainer = () => {
                             </TextField>
                         </FormControl>
                     </div>
-                    <div className={"simple"}>
-                        <Button className={"addButton"} variant="contained" type={"submit"} onClick={handleClick} >
+                    <div className="simple">
+                        <Button className="addButton" variant="contained" type="submit" onClick={handleClick} >
                             Add new task
                         </Button>
                     </div>
                 </form>
             </div>
-            <div className={"cardContainer"}>{cards}</div>
+            <div className="cardContainer">{cards}</div>
         </>
     )
 }
 
 export default MainContainer;
-
-
