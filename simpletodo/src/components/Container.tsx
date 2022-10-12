@@ -13,10 +13,8 @@ const MainContainer = () => {
     const [tasks, setTasks] = useState<Task[]>(loadTasks);
 
 
-    function handleClick(): void {
-        // @ts-ignore
+    const handleClick = (): void => {
         let newTask: Task = new Task(uuidV4(),title, details, urgentType);
-        // @ts-ignore
         setTasks([...tasks, newTask]);
         setTitle("");
         setDetails("");
@@ -71,8 +69,7 @@ const MainContainer = () => {
                     <div className="simple">
                         <FormControl sx={{ m: 1, minWidth: 150 }} style={{"width": "200px"}}>
                             <TextField id="selectOption" label="Urgency" select value={urgentType} onChange={(event) => {
-                                // @ts-ignore
-                                setUrgentType(event.target.value);
+                                setUrgentType(event.target.value as UrgentType);
                             }}>
                                 {Object.keys(UrgentType).map((element: string, index) => (
                                     <MenuItem className="menuItem" id="menuItem" centerRipple key={index}
